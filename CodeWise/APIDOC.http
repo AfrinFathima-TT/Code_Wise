@@ -1,0 +1,47 @@
+# API call for display all questions
+
+###
+GET  http://127.0.0.1:8000/questions/
+Accept: application/json
+
+# API call for create new question
+###
+POST http://127.0.0.1:8000/questions/
+Content-Type: application/json
+
+{
+    "title" : "Prime number",
+    "language" : "python",
+    "difficulty_level" : "",
+    "topic" : "",
+    "notes" : "This question is about calculating the  given number is prime",
+    "sample_input" : "7",
+    "sample_output" : "it is prime number",
+    "is_active" : true,
+    "explanation" : "this is is demo explanation"
+}
+
+
+
+
+###
+GET  http://127.0.0.1:8000/questions/4/
+Accept: application/json 
+
+###
+PUT  http://127.0.0.1:8000/questions/4/
+Content-Type: application/json
+
+{
+    "title" : "Grade calcultion of a student",
+    "language" : "java",
+    "difficulty_level" : "easy",
+    "topic" : "conditional statements",
+    "notes" : "This question is about calculating grade of a student",
+    "sample_input" : "90 out of 100",
+    "sample_output" : "A+",
+    "is_active" : true
+}
+
+###
+DELETE http://127.0.0.1:8000/questions/5/

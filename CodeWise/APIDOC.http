@@ -12,24 +12,21 @@ Content-Type: application/json
 {
     "title" : "Prime number",
     "language" : "python",
-    "difficulty_level" : "",
-    "topic" : "",
+    "difficulty_level" : "easy",
+    "topic" : "Coditional statements",
     "notes" : "This question is about calculating the  given number is prime",
     "sample_input" : "7",
     "sample_output" : "it is prime number",
-    "is_active" : true,
-    "explanation" : "this is is demo explanation"
+    "is_active" : true
 }
 
 
-
-
 ###
-GET  http://127.0.0.1:8000/questions/4/
+GET  http://127.0.0.1:8000/questions/6/
 Accept: application/json 
 
 ###
-PUT  http://127.0.0.1:8000/questions/4/
+PUT  http://127.0.0.1:8000/questions/3/
 Content-Type: application/json
 
 {
@@ -45,3 +42,50 @@ Content-Type: application/json
 
 ###
 DELETE http://127.0.0.1:8000/questions/5/
+
+
+#_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+###
+GET http://127.0.0.1:8000/submissions/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/submissions/
+Content-Type: application/json
+
+{
+    "question_id":"6",
+    "answer":" 11 is a prime number",
+    "owner":"Nayana"
+}
+
+
+###
+GET http://127.0.0.1:8000/submissions/3/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/submissions/2/
+Content-Type: application/json
+
+{
+    "question_id":"6",
+    "answer":"11 is a prime number",
+    "owner":"Nayana"
+}
+
+###
+DELETE http://127.0.0.1:8000/submissions/2/
+
+
+#_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+###
+PUT http://127.0.0.1:8000/submissions/3/evaluate/
+Content-Type: application/json
+
+{
+    "points" : 5,
+    "remarks" : "Excellent in coding"
+}

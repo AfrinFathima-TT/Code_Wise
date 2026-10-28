@@ -38,12 +38,12 @@ class SubmissionsDb(models.Model):
 
     question_id = models.IntegerField()
 
-    answer = models.PositiveIntegerField(null=True)
+    answer = models.TextField()
+
+    points = models.PositiveIntegerField(null=True)
 
     owner = models.CharField(max_length = 100)
 
     submission_date = models.DateTimeField(auto_now_add= True)
 
     remarks = models.TextField(null= True)
-
-

@@ -20,7 +20,12 @@ from Repository import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('questions/',views.QuestionListCreateView.as_view()),
-    path('questions/<pk>/',views.QuestionRetrieveUpdateDeleteView.as_view())
     
+    path('questions/',views.QuestionListCreateView.as_view()),
+    path('questions/<pk>/',views.QuestionRetrieveUpdateDeleteView.as_view()),
+
+    path('submissions/',views.SubmissionsListCreateView.as_view()),  
+    path('submissions/<int:pk>/',views.SubmissionsRetrieveUpdateDeleteView.as_view()),
+
+    path('submissions/<int:pk>/evaluate/',views.EvaluateSubmissionView.as_view())  
 ]

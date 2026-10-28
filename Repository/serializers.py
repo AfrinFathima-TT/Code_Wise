@@ -22,6 +22,12 @@ class SubmissionSerializer(serializers.Serializer):
     points = serializers.IntegerField(read_only = True)
 
     owner = serializers.CharField()
-    remarks = serializers.CharField()
+    remarks = serializers.CharField(read_only=True)
     submission_date = serializers.DateTimeField(read_only = True)
+
+    def validate(self,validate_data):
+        question_id = validate_data.get("question_id")
+        if not QuestionsDb.objects.filter(id=question_id).exists():
+            raise serializers.ValidationError("Question does not exists...!")
+        return validate_data
     
